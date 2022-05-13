@@ -25,15 +25,15 @@
         }
 
         .form-control{
-            background-color: rgb(58, 58, 58);
+            background-color: rgb(105, 88, 78);
             opacity: 0.9;
             color: black !important;
             border: 0 !important;
-            box-shadow: 0 0 8px cyan;
+            box-shadow: 0 0 8px white;
         }
 
         .form-control:hover{
-            box-shadow: 0 0 15px cyan;
+            box-shadow: 0 0 15px white;
         }
 
         .sum_card .bg {
@@ -71,7 +71,7 @@
     <div class="container">
         <!-- <br> -->
         {% if summarize_div %}
-        <center><h3 style="color: yellow;">A NLP algorithm (Text Ranking Algorithm) based web app for Text Summarization built using Django and Dockers and deployed on Heroku.</h3></center>
+        <center><h3 style="color: black; font-weight: bold">Summarize</h3></center>
         <br>
         <div class="row">
             <div class="col-md-3"></div>
@@ -81,23 +81,23 @@
                     {% csrf_token %}
                     <input type="text" class="form-control" placeholder="Enter the website URL" name="url_link" id="url_link">
                     {% if url_error == True %}
-                    <div class="form-control alert-danger" style="margin-top: 10px; background-color: #f8d7da !important;">
+                    <div class="form-control alert-danger" style="margin-top: 10px; background-color: #FFFFFF !important;">
                         <center><p style="color: red;"><b>Please enter a valid URL.</b></p></center>
                     </div>
                     {% endif %}
-                    <center><h3 style="margin: 10px 0 10px 0;">Or</h3></center>
+                    <center><h3 style="margin: 10px 0 10px 0; color: black; font-weight: bold">or</h3></center>
                     <textarea class="form-control" placeholder="Enter the text" name="textarea" rows="10"></textarea>
                     <br>
                     <input type="text" name="num_lines" class="form-control" placeholder="Enter how many of lines of summary you need. (OPTIONAL)"><br>
-                    <center><button class="btn btn-info btn-block" type="submit" name="summarize">Summarize Text</button></center>
+                    <center><button class="btn btn-secondary btn-block" type="submit" name="summarize">Summarize Text</button></center>
                 </form>
             </div>
             <div class="col-md-3"></div>
         </div>
         {% endif %}
         {% if flag %}
-        <center><a href="{% url 'index' %}" class="btn btn-info btn-block" style="margin-top: 10px;">Back to Home</a></center><br>
-        <center><p style="color: rgb(243, 209, 17);font-size: 25px;"><strong>Text was summarized succesfully in {{ time_taken }}s.</strong></p></center>
+        <center><a href="{% url 'index' %}" class="btn btn-secondary btn-block" style="margin-top: 10px; color white">Back to Home</a></center><br>
+        <center><p style="color: black;font-size: 20px;"><strong>Text was summarized succesfully in {{ time_taken }}s.</strong></p></center>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card sum_card">
